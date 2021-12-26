@@ -1,0 +1,29 @@
+<main> 
+  <nav>
+    <div class="nav-wrapper">
+      <div class="col s12">
+        <a href="/pokemons" class="breadcrumb">HOME</a>
+        <a href="/pokemons/show" class="breadcrumb">SHOW</a>
+      </div>
+    </div>
+  </nav>
+
+  <p style="color: green"><%= notice %></p>
+
+  <%= render @pokemon %>
+
+  <% if @pokemon.image_path? %>  <!-- アップロード画像がある場合に実行する -->
+    <p>
+      <%= image_tag @pokemon.image_path.url, class: "circle responsive-img" %><!-- userインスタンスの画像ファイルのURLを取得し表示 -->
+    </p>
+    <hr>
+  <% end %>
+
+  <div style="margin-top: 40px">
+
+    <%= link_to "Edit this pokemon",  edit_pokemon_path(@pokemon), class: "waves-effect waves-light btn red" %> or
+    <%= link_to "Back to pokemons", pokemons_path, class: "waves-effect waves-light btn" %>
+
+    <%= button_to "Destroy this pokemon!!!!!!!!", @pokemon, method: :delete, style: "display: block; margin: 40px auto;" %>
+  </div>
+</main>

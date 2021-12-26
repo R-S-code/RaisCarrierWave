@@ -1,0 +1,30 @@
+<main>
+
+  <nav>
+    <div class="nav-wrapper">
+      <div class="col s12">
+        <a href="/pokemons" class="breadcrumb">HOME</a>
+      </div>
+    </div>
+  </nav>
+
+  <p style="color: green"><%= notice %></p>
+
+  <h1 class="col s6">Pokemons</h1>
+
+  <div class="fixed-action-btn">
+    <%= link_to new_pokemon_path, class: "btn-floating btn-large waves-effect waves-light red" do %>
+      <i class="material-icons left">add</i>
+    <% end %>
+  </div>
+
+  <div id="pokemons">
+    <% @pokemons.each do |pokemon| %>
+      <hr>
+      <%= render pokemon %>
+      <p class="waves-effect waves-light btn red">
+        <%= link_to "Show this pokemon", pokemon, class: "white-text" %>
+      </p>
+    <% end %>
+  </div>
+</main>

@@ -1,0 +1,20 @@
+<main>
+  <nav>
+    <div class="nav-wrapper">
+      <div class="col s12">
+        <a href="/pokemons" class="breadcrumb">HOME</a>
+        <a href="/pokemons/new" class="breadcrumb">NEW</a>
+      </div>
+    </div>
+  </nav>
+
+  <h1>New pokemon</h1>
+
+  <%= render "form", pokemon: @pokemon %>
+
+  <br>
+
+  <div style="margin-top: 40px">
+    <%= link_to "Back to pokemons", pokemons_path, class: "waves-effect waves-light btn" %>
+  </div>
+</main>

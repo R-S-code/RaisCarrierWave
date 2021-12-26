@@ -1,0 +1,22 @@
+<main> 
+  <nav>
+    <div class="nav-wrapper">
+      <div class="col s12">
+        <a href="/pokemons" class="breadcrumb">HOME</a>
+        <a href="/pokemons/edit" class="breadcrumb">EDIT</a>
+      </div>
+    </div>
+  </nav>
+
+  <h1>Editing pokemon</h1>
+
+  <%= render "form", pokemon: @pokemon %>
+
+  <br>
+
+  <div style="margin-top: 40px">
+
+    <%= link_to "Show this pokemon", @pokemon, class: "waves-effect waves-light btn red" %> or
+    <%= link_to "Back to pokemons", pokemons_path, class: "waves-effect waves-light btn" %>
+  </div>
+</main>
